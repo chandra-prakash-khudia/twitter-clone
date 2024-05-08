@@ -9,6 +9,8 @@ const app = express();
 
 console.log(process.env.MONGO_URI);
 
+app.use(express.json());   //  to parse req.body
+app.use(express.urlencoded({extended:true}));  // parse to from data
 app.use("/api/auth", authRoutes);
 
 app.get("/", (req, res) => {

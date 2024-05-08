@@ -7,7 +7,7 @@ const userSchema = new mongoose.Schema(
             required: true,
             unique: true,
         },
-        fullNam: {
+        fullName: {
             type: String,
             required: true,
         },
@@ -23,7 +23,7 @@ const userSchema = new mongoose.Schema(
         },
         followers: [
             {
-                type: mongoose.Schema.Types.ObjectId,
+                type: mongoose.Schema.Types.ObjectId, // 16 character
                 ref: "User",
                 default: [],
             }
@@ -39,6 +39,7 @@ const userSchema = new mongoose.Schema(
             type: String,
             default: "",
         },
+        
         coverImg: {
             type: String,
             default: "",
